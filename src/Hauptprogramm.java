@@ -2,13 +2,13 @@ package src;
 import java.util.Random;
 import java.util.Scanner;
 
-import src.Player.Inventory;
-import src.Player.Item;
-import src.Player.Menu;
+import src.Menu.Menu;
+import src.Menu.inputOption;
 import src.Player.Player;
-import src.Player.Potions;
-import src.Player.Waffe;
-import src.Player.inputOption;
+import src.Player.Inventory.Inventory;
+import src.Player.Inventory.Item;
+import src.Player.Weapons.Potions;
+import src.Player.Weapons.Waffe;
 /** 
  * @author EgoBlack, Pawianberater
  */
@@ -44,10 +44,13 @@ public class Hauptprogramm extends Katze {
         opt1.addFunction(() -> {
             System.out.println("Hallo du affe!");
         });
+        opt2.addFunction(() -> {
+            System.out.println("RAUSCH");
+        });
 
         Menu1.addMenuItem(opt1); Menu1.addMenuItem(opt2);
         Menu1.sendMsg();
-        Menu1.menuInput(1);
+        Menu1.menuInput(2);
 
         Menu1.sendMsg();
 

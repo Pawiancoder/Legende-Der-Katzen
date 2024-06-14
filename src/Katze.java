@@ -1,7 +1,7 @@
 package src;
 
-import src.Player.Potions;
-import src.Player.Waffe;
+import src.Player.Weapons.Potions;
+import src.Player.Weapons.Waffe;
 
 /**
  * 

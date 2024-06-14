@@ -1,6 +1,4 @@
-package src.Player;
-
-import src.Functions.MenuFunction;
+package src.Menu;
 
 public class inputOption {
     public int optNum;

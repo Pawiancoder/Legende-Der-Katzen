@@ -1,7 +1,7 @@
 /**
  * @author EgoBlack, Pawianberater
  */
-package src.Player;
+package src.Menu;
 
 public class Menu {
     public String header;

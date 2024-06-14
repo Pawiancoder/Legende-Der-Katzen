@@ -1,4 +1,4 @@
-package src.Player;
+package src.Player.Weapons;
 /**
  *
  * @author EgoBlack, Pawianberater
