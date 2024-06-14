@@ -7,6 +7,7 @@ public class Menu {
     public String header;
     public String msg;
     public inputOption[] options = new inputOption[10];
+    
 
     public void sendMsg () {
         System.out.println("-----" + header + "-----");
@@ -20,12 +21,10 @@ public class Menu {
     }
 
     public void menuInput (int inputNum) {
-        for (int i = 0; i <= options.length - 1; i++) {
-            if (options[i] != null) {
-                //testen
-                if (options[i].optNum == inputNum) {
-                    System.out.println("Info: " + options[i].optionText);
-                }
+        for (inputOption option : options) {
+            if (option != null && option.optNum == inputNum) {
+                option.executeFunction(); //function wird ausgeführt
+                break;
             }
         }
     }

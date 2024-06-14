@@ -33,7 +33,6 @@ public class Hauptprogramm extends Katze {
         Player Spieler = new Player();
         Katze Katze = new Katze();
 
-
         //init(Spieler, Katze);
         Menu Menu1 = new Menu();
         Menu1.header = "Testmenü";
@@ -42,6 +41,10 @@ public class Hauptprogramm extends Katze {
         inputOption opt2 = new inputOption();
         opt1.optNum = 1; opt1.optionText = "Kämpfen";
         opt2.optNum = 2; opt2.optionText = "Inventar öffnen";
+        opt1.addFunction(() -> {
+            System.out.println("Hallo du affe!");
+        });
+
         Menu1.addMenuItem(opt1); Menu1.addMenuItem(opt2);
         Menu1.sendMsg();
         Menu1.menuInput(1);
@@ -142,6 +145,10 @@ public class Hauptprogramm extends Katze {
         scanner.close();
         setupCat(Tier, Character);
         System.out.println("Katze: " + Tier.HealthPoints + " HP - " + Tier.Name);
+    }
+
+    public static void helloWorld () {
+        System.out.println("Hello World!");
     }
 
     /**
