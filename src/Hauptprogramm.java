@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import src.Player.Inventory;
 import src.Player.Item;
+import src.Player.Menu;
 import src.Player.Player;
 import src.Player.Potions;
 import src.Player.Waffe;
@@ -16,6 +17,7 @@ public class Hauptprogramm extends Katze {
     private Potions Potions;
     private Inventory Inventory;
     private static Player Player;
+    private Menu Menu;
 
     //Singleplayer => nur ein Spieler
 
@@ -31,7 +33,12 @@ public class Hauptprogramm extends Katze {
         Katze Katze = new Katze();
 
 
-        init(Spieler, Katze);
+        //init(Spieler, Katze);
+        Menu Menu1 = new Menu();
+        Menu1.header = "Testmenü";
+        Menu1.msg = "Das ist ein Testmenü! :D HARRALD";
+
+        Menu1.sendMsg();
 
         Potions Trank1 = new Potions(); // Potion1 => erste Healpotion
         Trank1.name = "Einfacher Heiltrank";
