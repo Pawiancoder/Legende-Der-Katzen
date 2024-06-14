@@ -1,6 +1,6 @@
 package src.Player;
 
 public class inputOption {
-    int optNum;
-    
+    public int optNum;
+    public String optionText;
 }

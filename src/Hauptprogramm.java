@@ -8,6 +8,7 @@ import src.Player.Menu;
 import src.Player.Player;
 import src.Player.Potions;
 import src.Player.Waffe;
+import src.Player.inputOption;
 /** 
  * @author EgoBlack, Pawianberater
  */
@@ -37,6 +38,12 @@ public class Hauptprogramm extends Katze {
         Menu Menu1 = new Menu();
         Menu1.header = "Testmenü";
         Menu1.msg = "Das ist ein Testmenü! :D HARRALD";
+        inputOption opt1 = new inputOption();
+        inputOption opt2 = new inputOption();
+        opt1.optNum = 1; opt1.optionText = "Kämpfen";
+        opt2.optNum = 2; opt2.optionText = "Inventar öffnen";
+        Menu1.addMenuItem(opt1); Menu1.addMenuItem(opt2);
+        Menu1.sendMsg();
 
         Menu1.sendMsg();
 
