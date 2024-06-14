@@ -3,9 +3,9 @@ package src.Menu;
 public class inputOption {
     public int optNum;
     public String optionText;
-    private MenuFunction function;
+    private MenuInterface function;
 
-    public void addFunction(MenuFunction function) {
+    public void addFunction(MenuInterface function) {
         this.function = function;
     }
 

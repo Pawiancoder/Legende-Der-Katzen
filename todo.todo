@@ -1,5 +1,5 @@
-- gegner nach level erstellen
-- wenn gewonnen xp dazu
-- nach gewonnen regenerieren
-- nach levelup dann weitere Herzen
-- Menü optionen
+- [] gegner nach level erstellen
+- [] wenn gewonnen xp dazu
+- [] nach gewonnen regenerieren
+- [] nach levelup dann weitere Herzen
+- [x] Menü optionen

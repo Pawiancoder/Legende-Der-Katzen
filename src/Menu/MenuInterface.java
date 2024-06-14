@@ -1,5 +1,5 @@
 package src.Menu;
 
-public interface MenuFunction {
+public interface MenuInterface {
     void execute();
 }

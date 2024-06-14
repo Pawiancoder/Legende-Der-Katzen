@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import src.Menu.Menu;
-import src.Menu.inputOption;
+import src.Menu.inputOption; 
 import src.Player.Player;
 import src.Player.Inventory.Inventory;
 import src.Player.Inventory.Item;
