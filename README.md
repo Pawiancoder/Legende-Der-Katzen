@@ -1,3 +1,3 @@
 # Legende-Der-Katzen
 Textadventure
-Start: 20.06.2024
+Start: 12.06.2024
