@@ -9,7 +9,7 @@ public class Menu {
         System.out.println("-----" + header + "-----");
         for (int i = 0; i <= options.length - 1; i++) {
             System.out.println(options[i].optNum + " - " + options[i].optionText);
-            break;
+            return;
         }
         System.out.println("-----" + header + "-----");
     }
