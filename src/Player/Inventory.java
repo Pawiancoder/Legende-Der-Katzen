@@ -22,6 +22,7 @@ public class Inventory extends Item{
                 return true;
             }
         }
+        System.out.println("Dein Inventar ist voll Item wurde nicht Hinzugefügt!");
         return false; // Inventory is full
     }
 

@@ -8,8 +8,10 @@ public class Menu {
     public void sendMsg () {
         System.out.println("-----" + header + "-----");
         for (int i = 0; i <= options.length - 1; i++) {
-            System.out.println(options[i].optNum + " - " + options[i].optionText);
-            return;
+            //System.out.println("Testnum: " + options[i]); 
+            if (options[i] != null) {
+                System.out.println(options[i].optNum + " - " + options[i].optionText);
+            }
         }
         System.out.println("-----" + header + "-----");
     }
@@ -20,11 +22,13 @@ public class Menu {
         }
     }
 
-    public void addMenuItem (inputOption option) {
+    public boolean addMenuItem (inputOption option) {
         for (int i = 0; i <= options.length - 1; i++) {
             if (options[i] == null) {
                 options[i] = option;
+                return true;
             }
         }
+        return false;
     }
 }
