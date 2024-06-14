@@ -9,6 +9,7 @@ import src.Player.Inventory.Inventory;
 import src.Player.Inventory.Item;
 import src.Player.Weapons.Potions;
 import src.Player.Weapons.Waffe;
+import src.Menu.inputOption;
 /** 
  * @author EgoBlack, Pawianberater
  */
@@ -19,6 +20,7 @@ public class Hauptprogramm extends Katze {
     private Inventory Inventory;
     private static Player Player;
     private Menu Menu;
+    private inputOption inputOption;
 
     //Singleplayer => nur ein Spieler
 
@@ -33,20 +35,13 @@ public class Hauptprogramm extends Katze {
         Player Spieler = new Player();
         Katze Katze = new Katze();
 
-        //init(Spieler, Katze);
+        init(Spieler, Katze);
+        startGame();
         Menu Menu1 = new Menu();
         Menu1.header = "Testmenü";
         Menu1.msg = "Das ist ein Testmenü! :D HARRALD";
         inputOption opt1 = new inputOption();
         inputOption opt2 = new inputOption();
-        opt1.optNum = 1; opt1.optionText = "Kämpfen";
-        opt2.optNum = 2; opt2.optionText = "Inventar öffnen";
-        opt1.addFunction(() -> {
-            System.out.println("Hallo du affe!");
-        });
-        opt2.addFunction(() -> {
-            System.out.println("RAUSCH");
-        });
 
         Menu1.addMenuItem(opt1); Menu1.addMenuItem(opt2);
         Menu1.sendMsg();
@@ -150,8 +145,8 @@ public class Hauptprogramm extends Katze {
         System.out.println("Katze: " + Tier.HealthPoints + " HP - " + Tier.Name);
     }
 
-    public static void helloWorld () {
-        System.out.println("Hello World!");
+    public static void startGame () {
+        //START
     }
 
     /**
