@@ -44,6 +44,7 @@ public class Hauptprogramm extends Katze {
         opt2.optNum = 2; opt2.optionText = "Inventar öffnen";
         Menu1.addMenuItem(opt1); Menu1.addMenuItem(opt2);
         Menu1.sendMsg();
+        Menu1.menuInput(1);
 
         Menu1.sendMsg();
 
@@ -89,7 +90,7 @@ public class Hauptprogramm extends Katze {
         item1.name = "stichis nuke"; //
         item1.waffe = waffe3;
         Inv.addItem(item1);
-        Inv.displayInventory();
+        //Inv.displayInventory();
         
 
         Katze katze1 = new Katze();

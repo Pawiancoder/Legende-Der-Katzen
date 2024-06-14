@@ -1,3 +1,6 @@
+/**
+ * @author EgoBlack, Pawianberater
+ */
 package src.Player;
 
 public class Menu {
@@ -16,9 +19,14 @@ public class Menu {
         System.out.println("-----" + header + "-----");
     }
 
-    public void menuInput () {
+    public void menuInput (int inputNum) {
         for (int i = 0; i <= options.length - 1; i++) {
-            
+            if (options[i] != null) {
+                //testen
+                if (options[i].optNum == inputNum) {
+                    System.out.println("Info: " + options[i].optionText);
+                }
+            }
         }
     }
 
