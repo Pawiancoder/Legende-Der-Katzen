@@ -9,7 +9,7 @@ import src.Player.Inventory.Inventory;
 import src.Player.Inventory.Item;
 import src.Player.Weapons.Potions;
 import src.Player.Weapons.Waffe;
-import src.Menu.inputOption;
+import src.Utils.initiate;
 /** 
  * @author EgoBlack, Pawianberater
  */
@@ -21,6 +21,8 @@ public class Hauptprogramm extends Katze {
     private static Player Player;
     private Menu Menu;
     private inputOption inputOption;
+    private initiate initiate;
+    
 
     //Singleplayer => nur ein Spieler
 
@@ -34,8 +36,9 @@ public class Hauptprogramm extends Katze {
         Inventory Inv = new Inventory(10);
         Player Spieler = new Player();
         Katze Katze = new Katze();
+        initiate initiator = new initiate(); //Instanz der initiate Datei erstellen
 
-        init(Spieler, Katze);
+        init(Spieler, Katze, initiator);
         startGame();
         Menu Menu1 = new Menu();
         Menu1.header = "Testmenü";
@@ -123,7 +126,7 @@ public class Hauptprogramm extends Katze {
      * @param Character
      * @param Tier
      */
-    public static void init(Player Character, Katze Tier) {
+    public static void init(Player Character, Katze Tier, initiate initiator) {
         //Game Setup - Player && Katze
         Scanner scanner = new Scanner(System.in);
         System.out.println("----- Die Legende der Katzen! Version: " + versionNum + " -----");
@@ -131,66 +134,20 @@ public class Hauptprogramm extends Katze {
         System.out.println("Willkommen zu unserem Kampfspiel! Bevor es losgeht,  \n müssen ein paar " +
         "Dinge eingerichtet werden!");
         System.out.println("Gib deinen namen ein: ");
-        String textName = scanner.nextLine();
-        leonTest(textName);
+        String textName = scanner.nextLine();    
         Character.name = textName;
         System.out.println("Hallo, " + Character.name + "! Gib noch den Namen deiner Katze ein:");
         String text = scanner.nextLine();
-        leonTest(text);
         Tier.Name = text;
         System.out.println(Tier.Name + " ist eine gute Wahl!"); 
         
         scanner.close();
-        setupCat(Tier, Character);
+        initiator.setupCat(Tier, Character);
         System.out.println("Katze: " + Tier.HealthPoints + " HP - " + Tier.Name);
     }
 
     public static void startGame () {
         //START
-    }
-
-    /**
-     * @author EgoBlack, Pawianberater
-     * @param katze
-     */
-    public static void leonTest (String text) {
-        if (text.equalsIgnoreCase("susi.rosi")) {
-            System.out.println("Verpiss dich, Leon!");
-            System.exit(0);
-        }
-    }
-
-    public static void setupCat (Katze katze, Player spieler) {
-        katze.HealthPoints = 10;
-        katze.level = 1; katze.xp = 0;
-        spieler.level = 1; spieler.xp = 0;
-        //TODO: !addExp(spieler, katze);
-    }
-
-    /**
-     * @author EgoBlack, Pawianberater
-     * @param max
-     * @return 
-     */
-    public static int randomNum(int max) {
-        int returnInt = 0;
-        Random random = new Random();
-        returnInt = random.nextInt(max) - 1;
-        return returnInt;
-    }
-
-    public static void addExp(Player spieler, Katze katze) {
-        final double MAXXPCAT = 8.0 * katze.level; //Maximaele XP Punkte für Levelup
-        final int MAXPLAYERLVL = 10 * spieler.level; //Maximaele XP Punkte für Levelup
-        int levelUps = 0;
-        //40% vom Level
-        double newXP = ((katze.level * 40.0) / 100.0) * 10.0;
-        katze.xp = (int) newXP;
-        for (double i = newXP; newXP >= MAXXPCAT; i = i - MAXXPCAT) {
-            katze.level++;
-            levelUps++;
-        }
-        System.out.println(katze.Name + " ist Level " + katze.level + "! Es gab " + levelUps + " Levelups!");
     }
 
 }

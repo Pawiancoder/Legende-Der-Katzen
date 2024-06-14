@@ -8,17 +8,17 @@ import src.Player.Weapons.Waffe;
  * @author EgoBlack, Pawianberater
  */
 public class Katze extends Waffe {
-    private Potions potion;
-    String Name;
-    int Stimmung;
-    Waffe waffe; // Waffe von der Katze
-    Potions trank; // Trank der Katze
-    boolean istHungrig;
+    public Potions potion;
+    public String Name;
+    public int Stimmung;
+    public Waffe waffe; // Waffe von der Katze
+    public Potions trank; // Trank der Katze
+    public boolean istHungrig;
     // int Kampfkraft;
-    int MiauAnzahl;
-    int HealthPoints;
-    int xp;
-    int level;
+    public int MiauAnzahl;
+    public int HealthPoints;
+    public int xp;
+    public int level;
 
     public void miau() {
         for (int i = 1; i <= this.MiauAnzahl; i++) {
