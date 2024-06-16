@@ -37,7 +37,7 @@ public class Katze extends Waffe {
         }
     }
 
-    public void aergern() {
+    public void aergern() { //wird nicht genutzt
         this.Stimmung -= 2;
     }
 
