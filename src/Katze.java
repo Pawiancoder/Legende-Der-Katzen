@@ -1,6 +1,5 @@
 package src;
-
-import src.Player.Weapons.Potions;
+import src.Player.Weapons.Potions; //TODO: Potions richtig implementieren
 import src.Player.Weapons.Waffe;
 
 /**
@@ -14,11 +13,13 @@ public class Katze extends Waffe {
     public Waffe waffe; // Waffe von der Katze
     public Potions trank; // Trank der Katze
     public boolean istHungrig;
-    // int Kampfkraft;
+    // int Kampfkraft; => Die Kampfkraft - abgelößt durch Schaden der Waffe (Weapons/Waffe.java) ==> Waffen-Klasse
     public int MiauAnzahl;
     public int HealthPoints;
+    public int MaxHealthPoints;
     public int xp;
     public int level;
+    public boolean feeded;
 
     public void miau() {
         for (int i = 1; i <= this.MiauAnzahl; i++) {
@@ -29,6 +30,11 @@ public class Katze extends Waffe {
     public void fuettern() {
         this.Stimmung += 2;
         this.istHungrig = false;
+        //erweiterung => Regenerierung
+        if (!this.feeded) {
+            this.HealthPoints = this.MaxHealthPoints; //Herzen werden aufgefüllt
+            this.feeded = true; //!Nach Kampf wird feeded auf false gesetzt => Katze kann nach dem Kampf
+        }
     }
 
     public void aergern() {
