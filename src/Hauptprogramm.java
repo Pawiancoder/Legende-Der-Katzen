@@ -10,6 +10,7 @@ import src.Player.Inventory.Item;
 import src.Player.Weapons.Potions;
 import src.Player.Weapons.Waffe;
 import src.Utils.initiate;
+import src.Utils.renderCatFightMenu;
 /** 
  * @author EgoBlack, Pawianberater
  */
@@ -22,6 +23,7 @@ public class Hauptprogramm extends Katze {
     private Menu Menu;
     private inputOption inputOption;
     private initiate initiate;
+    private renderCatFightMenu renderCatFightMenu;
     
 
     //Singleplayer => nur ein Spieler
@@ -40,17 +42,6 @@ public class Hauptprogramm extends Katze {
 
         init(Spieler, Katze, initiator);
         startGame();
-        Menu Menu1 = new Menu();
-        Menu1.header = "Testmenü";
-        Menu1.msg = "Das ist ein Testmenü! :D HARRALD";
-        inputOption opt1 = new inputOption();
-        inputOption opt2 = new inputOption();
-
-        Menu1.addMenuItem(opt1); Menu1.addMenuItem(opt2);
-        Menu1.sendMsg();
-        Menu1.menuInput(2);
-
-        Menu1.sendMsg();
 
         Potions Trank1 = new Potions(); // Potion1 => erste Healpotion
         Trank1.name = "Einfacher Heiltrank";
@@ -141,10 +132,12 @@ public class Hauptprogramm extends Katze {
         Tier.Name = text;
         System.out.println(Tier.Name + " ist eine gute Wahl!"); 
         
-        scanner.close();
         initiator.setupCat(Tier, Character);
         System.out.println("Katze: " + Tier.HealthPoints + " HP - " + Tier.Name);
-    }
+        renderCatFightMenu kaempfen = new renderCatFightMenu();
+        kaempfen.renderCats(Tier, scanner);
+        scanner.close();
+       }
 
     public static void startGame () {
         //START
