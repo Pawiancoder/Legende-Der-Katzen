@@ -85,10 +85,10 @@ public void renderCats (Katze playerKatze, Scanner scanner) {
                 breakUp = true;
             }
         } catch (InputMismatchException e) {
-            System.out.println("Bitti nur Zahli eingebi!");
+            System.out.println("Bitti nur Zahli eingebi!"); //TODO: KURWA KAFFEE mitnehmen
         }
         scanner.next();
     }
-}
+} //Klasse
 
 }

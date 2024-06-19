@@ -1,12 +1,16 @@
 package src;
+
+import src.Player.Player;
 import src.Player.Weapons.Potions;
 import src.Player.Weapons.Waffe;
+import src.Utils.initiate;
 
 /**
  * 
  * @author EgoBlack, Pawianberater
  */
-public class Katze extends Waffe {
+public class Katze {
+    
     public Potions potion;
     public String Name;
     public int Stimmung;
@@ -51,8 +55,9 @@ public class Katze extends Waffe {
                 this.Name + " Waffe: " + this.waffe + ", greift " + gegner.Name + " Waffe: " + gegner.waffe + " an!"); // Zeigt
                                                                                                                        // Katze
                                                                                                                        // und
-                                                                                                                       // Waffe
-                                                                                                                       // an
+        
+        initiate init = new initiate();                                                                                                               // Waffe
+                                                                                                                        // an
         System.out.println(".");
         System.out.println("..");
         System.out.println("...");
@@ -67,7 +72,7 @@ public class Katze extends Waffe {
             round++;
             System.out.println("----------");
             System.out.println("Gegner: " + gegner.HealthPoints);
-            System.out.println("HARRALD: " + this.HealthPoints);
+            System.out.println("Meine Katze:" + this.HealthPoints);
             System.out.println("----------");
             if (gegnerCooldown == 0) {
                 this.HealthPoints -= gegner.waffe.Schaden; // Angreifende Katze bekommt schaden
@@ -78,7 +83,7 @@ public class Katze extends Waffe {
                 myCoolDown = myTemp + 1;
             }
             if (this.HealthPoints <= 0) {
-                System.out.println(gegner.name + " hat gewonnen! Runden: " + round);
+                System.out.println(gegner.Name + " hat gewonnen! Runden: " + round);
                 break;
             } else if (gegner.HealthPoints <= 0) {
                 System.out.println(this.Name + " hat gewonnen! Runden: " + round);
@@ -87,5 +92,18 @@ public class Katze extends Waffe {
             gegnerCooldown--;
             myCoolDown--; // Beides 1 minus
         }
+    }
+    public void addExp(Player spieler, Katze katze) {
+        final double MAXXPCAT = 8.0 * katze.level; //Maximaele XP Punkte für Levelup
+        final int MAXPLAYERLVL = 10 * spieler.level; //Maximaele XP Punkte für Levelup
+        int levelUps = 0;
+        //40% vom Level
+        double newXP = ((katze.level * 40.0) / 100.0) * 10.0;
+        katze.xp = (int) newXP;
+        for (double i = newXP; newXP >= MAXXPCAT; i = i - MAXXPCAT) {
+            katze.level++;
+            levelUps++;
+        }
+        System.out.println(katze.Name + " ist Level " + katze.level + "! Es gab " + levelUps + " Levelups!");
     }
 }

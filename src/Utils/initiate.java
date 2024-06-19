@@ -35,18 +35,4 @@ public class initiate {
         returnInt = random.nextInt(max) - 1;
         return returnInt;
     }
-
-    public static void addExp(Player spieler, Katze katze) {
-        final double MAXXPCAT = 8.0 * katze.level; //Maximaele XP Punkte für Levelup
-        final int MAXPLAYERLVL = 10 * spieler.level; //Maximaele XP Punkte für Levelup
-        int levelUps = 0;
-        //40% vom Level
-        double newXP = ((katze.level * 40.0) / 100.0) * 10.0;
-        katze.xp = (int) newXP;
-        for (double i = newXP; newXP >= MAXXPCAT; i = i - MAXXPCAT) {
-            katze.level++;
-            levelUps++;
-        }
-        System.out.println(katze.Name + " ist Level " + katze.level + "! Es gab " + levelUps + " Levelups!");
-    }
 }
