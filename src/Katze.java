@@ -1,5 +1,5 @@
 package src;
-import src.Player.Weapons.Potions; //TODO: Potions richtig implementieren
+import src.Player.Weapons.Potions;
 import src.Player.Weapons.Waffe;
 
 /**

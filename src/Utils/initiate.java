@@ -19,6 +19,7 @@ public class initiate {
 
     public void setupCat (Katze katze, Player spieler) {
         katze.HealthPoints = 10;
+        katze.MaxHealthPoints = katze.HealthPoints;
         katze.level = 1; katze.xp = 0;
         spieler.level = 1; spieler.xp = 0;
         //TODO: !addExp(spieler, katze);
