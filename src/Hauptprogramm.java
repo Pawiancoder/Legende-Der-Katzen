@@ -11,6 +11,7 @@ import src.Player.Weapons.Potions;
 import src.Player.Weapons.Waffe;
 import src.Utils.initiate;
 import src.Utils.renderCatFightMenu;
+import src.Player.Experience;
 /** 
  * @author EgoBlack, Pawianberater
  */
@@ -33,8 +34,10 @@ public class Hauptprogramm extends Katze {
      * @param args
      */
     public static void main(String[] args) {
-        
         // init
+        Experience exp = new Experience();
+        exp.renderXpBar(100, 50);
+
         Inventory Inv = new Inventory(10);
         Player Spieler = new Player();
         Katze Katze = new Katze();
