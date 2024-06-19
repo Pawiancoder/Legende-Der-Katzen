@@ -77,7 +77,7 @@ public void renderCats (Katze playerKatze, Scanner scanner) {
     while (!breakUp) {
         try {
             int nextInt = scanner.nextInt();
-            if (nextInt > 3 || nextInt <= 0) {
+            if (nextInt > 3 || nextInt <= 0) { //Zahl testen
                 System.out.println("Bitte eine Zahl zwischen 1 und 3 eingeben!");
             } else {
                 int userIn = nextInt;
