@@ -36,9 +36,32 @@ public void renderCats (Katze playerKatze, Scanner scanner) {
     opt3.optNum = 3; opt3.optionText = "Katze 3:" + " - " + Katze3.HealthPoints + " HP - " + Katze3.xp + " XP";
 
     //Waffen reinstopfen
-    int damage1 = Math.round(Katze1.HealthPoints / 2); 
+    int damage1 = Math.round(Katze1.HealthPoints / 3); 
+    int damage2 = Math.round(Katze2.HealthPoints / 3);
+    int damage3 = Math.round(Katze3.HealthPoints / 3);
 
+    Waffe waffe1 = new Waffe();
+    waffe1.Schaden = damage1; waffe1.coolDown = 0;    
+
+
+
+
+
+    Waffe waffe2 = new Waffe();
+    waffe2.Schaden = 2;
+    waffe2.coolDown = 1;
+    
+
+    Waffe waffe3 = new Waffe();
+    waffe3.Schaden = damage3; 
+    waffe3.coolDown = 2;
     //Funktionen der Katze
+
+    //Waffe an Katzen zuweisen
+
+    Katze1.waffe = waffe1;
+    Katze2.waffe = waffe2;
+    Katze3.waffe = waffe3;
 
     opt1.addFunction(() -> playerKatze.wirdAngegriffenVon(Katze1)); //Spieler greift Katze 1 an
     opt2.addFunction(() -> playerKatze.wirdAngegriffenVon(Katze2)); //Spieler greift Katze 2 an

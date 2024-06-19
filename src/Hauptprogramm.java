@@ -133,6 +133,13 @@ public class Hauptprogramm extends Katze {
         System.out.println(Tier.Name + " ist eine gute Wahl!"); 
         
         initiator.setupCat(Tier, Character);
+        // Attribute Babajaga(Waffe1)
+        Waffe waffe4 = new Waffe();
+        waffe4.name = "Babajaga";
+        waffe4.Waffentyp = "MP";
+        waffe4.Schaden = 4;
+
+        Tier.waffe = waffe4;
         System.out.println("Katze: " + Tier.HealthPoints + " HP - " + Tier.Name);
         renderCatFightMenu kaempfen = new renderCatFightMenu();
         kaempfen.renderCats(Tier, scanner);

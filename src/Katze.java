@@ -58,15 +58,17 @@ public class Katze extends Waffe {
         System.out.println("...");
 
         final int gegnerTemp = gegner.waffe.coolDown;
-        int gegnerCooldown = gegnerTemp; // Speichert Cooldown als final und setzt ihn in die TEMP Variable
-        final int myTemp = this.waffe.coolDown;
+        int gegnerCooldown = gegnerTemp; 
+        int myTemp = this.waffe.coolDown;
         int myCoolDown = myTemp;
         int round = 0;
 
         while (this.HealthPoints > 0 && gegner.HealthPoints > 0) {
             round++;
+            System.out.println("----------");
             System.out.println("Gegner: " + gegner.HealthPoints);
             System.out.println("HARRALD: " + this.HealthPoints);
+            System.out.println("----------");
             if (gegnerCooldown == 0) {
                 this.HealthPoints -= gegner.waffe.Schaden; // Angreifende Katze bekommt schaden
                 gegnerCooldown = gegnerTemp + 1;
