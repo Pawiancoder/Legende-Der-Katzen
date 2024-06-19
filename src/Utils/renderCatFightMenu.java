@@ -77,12 +77,17 @@ public void renderCats (Katze playerKatze, Scanner scanner) {
     while (!breakUp) {
         try {
             int nextInt = scanner.nextInt();
-            int userIn = nextInt;
-            kampfMenu.menuInput(userIn);
-            breakUp = true;
+            if (nextInt > 3 || nextInt <= 0) {
+                System.out.println("Bitte eine Zahl zwischen 1 und 3 eingeben!");
+            } else {
+                int userIn = nextInt;
+                kampfMenu.menuInput(userIn);
+                breakUp = true;
+            }
         } catch (InputMismatchException e) {
             System.out.println("Bitti nur Zahli eingebi!");
         }
+        scanner.next();
     }
 }
 
