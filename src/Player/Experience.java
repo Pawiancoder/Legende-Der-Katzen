@@ -3,7 +3,7 @@ package src.Player;
 public class Experience {
     String xpBar = "[----------------------------------------------------------------------------------------------------]";
     
-    public void renderXpBar (int maxXp, int actualXp) 
+    public void renderXpBar (int maxXp, Double actualXp) 
     {
         String xpBar = "";
         //Xp in prozent ausrechnen
@@ -15,8 +15,8 @@ public class Experience {
 
         // x = actualxp * 100 / maxxp
 
-        int percent = Math.round(percent = actualXp * 100 / maxXp);
-        int tempPercent = percent;
+        double percent = Math.round(percent = actualXp * 100.0 / maxXp);
+        double tempPercent = percent;
         xpBar += "[";
         for (int i = 1; i <= 100; i++) {
             if (tempPercent > 0) {
@@ -26,7 +26,7 @@ public class Experience {
                 xpBar += "-";
             }
         }
-        xpBar += "]";
+        xpBar += "] + " + actualXp + " XP";
         System.out.println(xpBar);
     }
 

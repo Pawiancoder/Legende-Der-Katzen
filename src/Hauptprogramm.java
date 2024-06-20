@@ -1,5 +1,4 @@
 package src;
-import java.util.Random;
 import java.util.Scanner;
 
 import src.Menu.Menu;
@@ -20,12 +19,12 @@ public class Hauptprogramm extends Katze {
     private Waffe Waffen;
     private Potions Potions;
     private Inventory Inventory;
-    private static Player Player;
+    public static Player Player;
     private Menu Menu;
     private inputOption inputOption;
     private initiate initiate;
     private renderCatFightMenu renderCatFightMenu;
-    
+    private Experience experience;
 
     //Singleplayer => nur ein Spieler
 
@@ -36,10 +35,10 @@ public class Hauptprogramm extends Katze {
     public static void main(String[] args) {
         // init
         Experience exp = new Experience();
-        exp.renderXpBar(100, 50);
+        exp.renderXpBar(100, 50.0);
 
         Inventory Inv = new Inventory(10);
-        Player Spieler = new Player();
+        Player Spieler = new Player(); //Spieler außerhalb aufrufbar machen?
         Katze Katze = new Katze();
         initiate initiator = new initiate(); //Instanz der initiate Datei erstellen
 
@@ -145,7 +144,7 @@ public class Hauptprogramm extends Katze {
         Tier.waffe = waffe4;
         System.out.println("Katze: " + Tier.HealthPoints + " HP - " + Tier.Name);
         renderCatFightMenu kaempfen = new renderCatFightMenu();
-        kaempfen.renderCats(Tier, scanner);
+        kaempfen.renderCats(Tier, scanner, Character);
         scanner.close();
        }
 

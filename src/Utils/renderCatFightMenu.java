@@ -6,6 +6,7 @@ import java.util.Scanner;
 import src.Katze;
 import src.Menu.Menu;
 import src.Menu.inputOption;
+import src.Player.Player;
 import src.Player.Weapons.Waffe;
 
 public class renderCatFightMenu {
@@ -22,7 +23,7 @@ Katze Katze3 = new Katze();
 //Katze2: gleiches Level / Kampfkraft
 //Katze3: 1 Level drunter / Kampfkraft geringer
 
-public void renderCats (Katze playerKatze, Scanner scanner) {
+public void renderCats (Katze playerKatze, Scanner scanner, Player player) {
     Katze1.HealthPoints = playerKatze.MaxHealthPoints + 1; Katze1.xp = playerKatze.xp + 1;
     Katze2.HealthPoints = playerKatze.MaxHealthPoints; Katze2.xp = playerKatze.xp;
     Katze3.HealthPoints = playerKatze.MaxHealthPoints - 1; Katze3.xp = playerKatze.xp - 1;
@@ -63,9 +64,9 @@ public void renderCats (Katze playerKatze, Scanner scanner) {
     Katze2.waffe = waffe2;
     Katze3.waffe = waffe3;
 
-    opt1.addFunction(() -> playerKatze.wirdAngegriffenVon(Katze1)); //Spieler greift Katze 1 an
-    opt2.addFunction(() -> playerKatze.wirdAngegriffenVon(Katze2)); //Spieler greift Katze 2 an
-    opt3.addFunction(() -> playerKatze.wirdAngegriffenVon(Katze3)); //Spieler greift Katze 3 an
+    opt1.addFunction(() -> playerKatze.wirdAngegriffenVon(Katze1, player)); //Spieler greift Katze 1 an
+    opt2.addFunction(() -> playerKatze.wirdAngegriffenVon(Katze2, player)); //Spieler greift Katze 2 an
+    opt3.addFunction(() -> playerKatze.wirdAngegriffenVon(Katze3, player)); //Spieler greift Katze 3 an
     
 
     Menu kampfMenu = new Menu();

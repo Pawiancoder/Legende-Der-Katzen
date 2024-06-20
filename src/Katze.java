@@ -4,6 +4,7 @@ import src.Player.Player;
 import src.Player.Weapons.Potions;
 import src.Player.Weapons.Waffe;
 import src.Utils.initiate;
+import src.Player.Experience;
 
 /**
  * 
@@ -50,7 +51,7 @@ public class Katze {
      * @param gegner
      */
 
-    public void wirdAngegriffenVon(Katze gegner) {
+    public void wirdAngegriffenVon(Katze gegner, Player player) {
         System.out.println(
                 this.Name + " Waffe: " + this.waffe + ", greift " + gegner.Name + " Waffe: " + gegner.waffe + " an!"); // Zeigt
                                                                                                                        // Katze
@@ -92,7 +93,9 @@ public class Katze {
             gegnerCooldown--;
             myCoolDown--; // Beides 1 minus
         }
+        addExp(player, gegner);
     }
+
     public void addExp(Player spieler, Katze katze) {
         final double MAXXPCAT = 8.0 * katze.level; //Maximaele XP Punkte für Levelup
         final int MAXPLAYERLVL = 10 * spieler.level; //Maximaele XP Punkte für Levelup
@@ -104,6 +107,9 @@ public class Katze {
             katze.level++;
             levelUps++;
         }
-        System.out.println(katze.Name + " ist Level " + katze.level + "! Es gab " + levelUps + " Levelups!");
+        //TODO: Levelups ausgeben
+        System.out.println("Hallo!");
+        Experience exp = new Experience();
+        exp.renderXpBar(MAXPLAYERLVL, newXP);
     }
 }
