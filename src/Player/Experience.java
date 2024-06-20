@@ -1,10 +1,10 @@
 package src.Player;
 
 public class Experience {
-    String xpBar = "[----------------------------------------------------------------------------------------------------]";
-    
+   
     public void renderXpBar (int maxXp, Double actualXp) 
     {
+        System.out.println("Du kleiner Affe");
         String xpBar = "";
         //Xp in prozent ausrechnen
         //100% = maxXP

@@ -43,7 +43,6 @@ public class Hauptprogramm extends Katze {
         initiate initiator = new initiate(); //Instanz der initiate Datei erstellen
 
         init(Spieler, Katze, initiator);
-        startGame();
 
         Potions Trank1 = new Potions(); // Potion1 => erste Healpotion
         Trank1.name = "Einfacher Heiltrank";
@@ -147,9 +146,4 @@ public class Hauptprogramm extends Katze {
         kaempfen.renderCats(Tier, scanner, Character);
         scanner.close();
        }
-
-    public static void startGame () {
-        //START
-    }
-
 }

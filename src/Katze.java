@@ -111,4 +111,4 @@ public class Katze {
         Experience exp = new Experience();
         exp.renderXpBar(MAXPLAYERLVL, newXP);
     }
-} //kek
+}

@@ -45,11 +45,8 @@ public void renderCats (Katze playerKatze, Scanner scanner, Player player) {
     waffe1.Schaden = damage1; waffe1.coolDown = 0;    
 
 
-
-
-
     Waffe waffe2 = new Waffe();
-    waffe2.Schaden = 2;
+    waffe2.Schaden = damage2;
     waffe2.coolDown = 1;
     
 
