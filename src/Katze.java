@@ -26,6 +26,8 @@ public class Katze {
     public int level;
     public boolean feeded;
 
+    private Experience experience;
+
     public void miau() {
         for (int i = 1; i <= this.MiauAnzahl; i++) {
             System.out.println("[" + this.Name + "] Miau!");
@@ -93,13 +95,15 @@ public class Katze {
             gegnerCooldown--;
             myCoolDown--; // Beides 1 minus
         }
+        System.out.println("Hallooooooooo");
         addExp(player, gegner);
     }
-
+    //TODO: Diese funktion (addExp) hängt
     public void addExp(Player spieler, Katze katze) {
         final double MAXXPCAT = 8.0 * katze.level; //Maximaele XP Punkte für Levelup
         final int MAXPLAYERLVL = 10 * spieler.level; //Maximaele XP Punkte für Levelup
         int levelUps = 0;
+        System.out.println(spieler);
         //40% vom Level
         double newXP = ((katze.level * 40.0) / 100.0) * 10.0;
         katze.xp = (int) newXP;
@@ -107,7 +111,7 @@ public class Katze {
             katze.level++;
             levelUps++;
         }
-        System.out.println("Hallo!");
+        System.out.println("Levelups: " + levelUps + ". Level: " + katze.level);
         Experience exp = new Experience();
         exp.renderXpBar(MAXPLAYERLVL, newXP);
     }
