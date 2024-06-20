@@ -107,7 +107,6 @@ public class Katze {
             katze.level++;
             levelUps++;
         }
-        //TODO: Levelups ausgeben
         System.out.println("Hallo!");
         Experience exp = new Experience();
         exp.renderXpBar(MAXPLAYERLVL, newXP);
