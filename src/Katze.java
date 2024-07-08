@@ -86,7 +86,7 @@ public class Katze {
                 System.out.println(gegner.Name + " hat gewonnen! Runden: " + round);
                 break;
             } else if (gegner.HealthPoints <= 0) {
-                System.out.println(this.Name + " hat gewonnen! Runden: " + round);
+                System.out.println(this.Name + " hat gewonnen! Runden: " + round + " HP: " + this.HealthPoints);
                 break;
             }
             gegnerCooldown--;
@@ -97,28 +97,15 @@ public class Katze {
     }
     //TODO: Diese funktion (addExp) hängt
     public void addExp(Player spieler, Katze katze) {
-        final int MAXXPCAT = (int) Math.round(8.0 * katze.level) + 1; //Maximaele XP Punkte für Levelup
-        final int MAXPLAYERLVL = 10 * spieler.level; //Maximaele XP Punkte für Levelup
-        int levelUps = 0;
-        System.out.println(spieler);
-        //40% vom Level
-        int newXP = Math.round((katze.level + 1) * 10); //!Hülfee
-        System.out.println("Level: " + katze.level);
-        katze.xp = (int) newXP;
-        for (int i = newXP; newXP <= MAXXPCAT; i = i - MAXXPCAT) {
-            
-            System.out.println(newXP);
-            System.out.println(i);
-            katze.level++;
-            levelUps++;
+        System.out.println("Katze-HP: " + katze.HealthPoints);
+        int newXp = (katze.level + 1) * katze.HealthPoints;
+        int maxXP = katze.xp * 10;
+
+        System.out.println("newXP: " + newXp); System.out.println("maxXP: " + maxXP);
+
+        for (int i = newXp; i >= maxXP; i = i - maxXP) {
+            System.out.println("KURWA SCHLEIFE!!");
         }
-        System.out.println("MAXXP: " + MAXXPCAT);
-        System.out.println("NewXP: " + newXP);
-        System.out.println("Levelups: " + levelUps + ". Level: " + katze.level);
-        Experience exp = new Experience();
-        for (int i = 0; i <= levelUps; i++) {
-            exp.renderXpBar(MAXXPCAT, newXP);
-        }
-        exp.renderXpBar(MAXPLAYERLVL, newXP);
+
     }
 }

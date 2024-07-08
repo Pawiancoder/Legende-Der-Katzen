@@ -15,7 +15,7 @@ public class Experience {
 
         // x = actualxp * 100 / maxxp
 
-        double percent = Math.round(percent = actualXp * 100.0 / maxXp);
+        double percent = Math.round(percent = actualXp * 100.0 / maxXp); //Neues XP in Prozent
         double tempPercent = percent;
         xpBar += "[";
         for (int i = 1; i <= 100; i++) {
