@@ -2,7 +2,7 @@ package src.Player;
 
 public class Experience {
    
-    public void renderXpBar (int maxXp, Double actualXp) 
+    public void renderXpBar (int maxXp, int actualXp) 
     {
         System.out.println("Du kleiner Affe");
         String xpBar = "";

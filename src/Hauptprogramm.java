@@ -35,7 +35,7 @@ public class Hauptprogramm extends Katze {
     public static void main(String[] args) {
         // init
         Experience exp = new Experience();
-        exp.renderXpBar(100, 50.0);
+        exp.renderXpBar(100, 50);
 
         Inventory Inv = new Inventory(10);
         Player Spieler = new Player(); //Spieler außerhalb aufrufbar machen?

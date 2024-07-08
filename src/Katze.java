@@ -56,10 +56,7 @@ public class Katze {
     public void wirdAngegriffenVon(Katze gegner, Player player) {
         System.out.println(
                 this.Name + " Waffe: " + this.waffe + ", greift " + gegner.Name + " Waffe: " + gegner.waffe + " an!"); // Zeigt
-                                                                                                                       // Katze
-                                                                                                                       // und
-        
-        initiate init = new initiate();                                                                                                               // Waffe
+                                                                                                                                                    // Waffe
                                                                                                                         // an
         System.out.println(".");
         System.out.println("..");
@@ -100,19 +97,27 @@ public class Katze {
     }
     //TODO: Diese funktion (addExp) hängt
     public void addExp(Player spieler, Katze katze) {
-        final double MAXXPCAT = 8.0 * katze.level; //Maximaele XP Punkte für Levelup
+        final int MAXXPCAT = (int) Math.round(8.0 * katze.level) + 1; //Maximaele XP Punkte für Levelup
         final int MAXPLAYERLVL = 10 * spieler.level; //Maximaele XP Punkte für Levelup
         int levelUps = 0;
         System.out.println(spieler);
         //40% vom Level
-        double newXP = Math.round(((katze.level * 40.0) / 100.0) * 10.0); //!Hülfee
+        int newXP = Math.round((katze.level + 1) * 10); //!Hülfee
+        System.out.println("Level: " + katze.level);
         katze.xp = (int) newXP;
-        for (double i = newXP; newXP >= MAXXPCAT; i = i - MAXXPCAT) {
+        for (int i = newXP; newXP <= MAXXPCAT; i = i - MAXXPCAT) {
+            
+            System.out.println(newXP);
+            System.out.println(i);
             katze.level++;
             levelUps++;
         }
+        System.out.println("NewXP: " + newXP);
         System.out.println("Levelups: " + levelUps + ". Level: " + katze.level);
         Experience exp = new Experience();
+        for (int i = 0; i <= levelUps; i++) {
+            exp.renderXpBar(MAXXPCAT, newXP);
+        }
         exp.renderXpBar(MAXPLAYERLVL, newXP);
     }
 }
