@@ -105,7 +105,7 @@ public class Katze {
         int levelUps = 0;
         System.out.println(spieler);
         //40% vom Level
-        double newXP = ((katze.level * 40.0) / 100.0) * 10.0;
+        double newXP = Math.round(((katze.level * 40.0) / 100.0) * 10.0); //!Hülfee
         katze.xp = (int) newXP;
         for (double i = newXP; newXP >= MAXXPCAT; i = i - MAXXPCAT) {
             katze.level++;
