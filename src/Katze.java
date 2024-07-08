@@ -112,6 +112,7 @@ public class Katze {
             katze.level++;
             levelUps++;
         }
+        System.out.println("MAXXP: " + MAXXPCAT);
         System.out.println("NewXP: " + newXP);
         System.out.println("Levelups: " + levelUps + ". Level: " + katze.level);
         Experience exp = new Experience();
