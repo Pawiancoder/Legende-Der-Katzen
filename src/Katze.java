@@ -3,7 +3,6 @@ package src;
 import src.Player.Player;
 import src.Player.Weapons.Potions;
 import src.Player.Weapons.Waffe;
-import src.Utils.initiate;
 import src.Player.Experience;
 
 /**
@@ -97,7 +96,8 @@ public class Katze {
     }
     //TODO: Diese funktion (addExp) hängt
     public void addExp(Player spieler, Katze katze) {
-        System.out.println("Katze-HP: " + katze.HealthPoints);
+        System.out.println("Katze-HP: " + katze.MaxHealthPoints);
+        System.out.println("Katze-Level: " + katze.level);
         int newXp = (katze.level + 1) * katze.HealthPoints;
         int maxXP = katze.xp * 10;
 
