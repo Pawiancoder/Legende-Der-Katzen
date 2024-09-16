@@ -91,21 +91,18 @@ public class Katze {
             gegnerCooldown--;
             myCoolDown--; // Beides 1 minus
         }
-        System.out.println("Hallooooooooo");
         addExp(player, gegner);
     }
+
     //TODO: Diese funktion (addExp) hängt
     public void addExp(Player spieler, Katze katze) {
         System.out.println("Katze-HP: " + katze.MaxHealthPoints);
         System.out.println("Katze-Level: " + katze.level);
         int newXp = (katze.level + 1) * katze.HealthPoints;
+        System.out.println("Level + 1: " + katze.level + 1);
         int maxXP = katze.xp * 10;
 
         System.out.println("newXP: " + newXp); System.out.println("maxXP: " + maxXP);
-
-        for (int i = newXp; i >= maxXP; i = i - maxXP) {
-            System.out.println("KURWA SCHLEIFE!!");
-        }
 
     }
 }
